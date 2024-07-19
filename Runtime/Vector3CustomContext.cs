@@ -23,15 +23,18 @@ public class Vector3CustomContext : MonoBehaviour
 
         TextAsset file = Resources.Load<TextAsset>("Vector3Actions");
 
-        var N = JSON.Parse(file.text);
-
-        foreach (JSONNode v in N["actions"])
+        if (file != null)
         {
-            menu.AddItem(new GUIContent(v["name"]), false, () =>
+            var N = JSON.Parse(file.text);
+    
+            foreach (JSONNode v in N["actions"])
             {
-                property.vector3Value = new Vector3(v["values"][0], v["values"][1], v["values"][2]);
-                SerializeProp(property);
-            });
+                menu.AddItem(new GUIContent(v["name"]), false, () =>
+                {
+                    property.vector3Value = new Vector3(v["values"][0], v["values"][1], v["values"][2]);
+                    SerializeProp(property);
+                });
+            }
         }
     }
 
@@ -57,7 +60,7 @@ public class Vector3CustomContext : MonoBehaviour
  * 
  * The MIT License (MIT)
  * 
- * Copyright (c) 2012-2022 Markus Göbel (Bunny83)
+ * Copyright (c) 2012-2022 Markus GÃ¶bel (Bunny83)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
