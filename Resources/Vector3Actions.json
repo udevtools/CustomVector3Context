@@ -1,0 +1,16 @@
+{
+  "actions": [
+    {
+      "name": "Zero",
+      "values": [ 0, 0, 0 ]
+    },
+    {
+      "name": "One",
+      "values": [ 1, 1, 1 ]
+    },
+    {
+      "name": "Ten",
+      "values": [ 10, 10, 10 ]
+    }
+  ]
+}
